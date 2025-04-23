@@ -53,9 +53,6 @@ struct MedicationsList: View {
             
         }
         .background(AppColors.mainBackground)
-        
-//        Spacer()
-        
        
     }
 }
