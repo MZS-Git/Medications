@@ -25,11 +25,7 @@ struct MedicineCellView: View {
             
             Spacer()
         }
-//        .frame(maxWidth: .infinity, minHeight: 40)
-//        .background(Color.red)
-        .cornerRadius(8)
-//        .padding(.horizontal, 2)
-
+        .frame(maxWidth: .infinity, minHeight: 40)
     }
 }
 

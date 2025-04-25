@@ -7,9 +7,10 @@
 
 import SwiftUI
 
-struct MedicationsList: View {
+struct MedicationsListView: View {
     
-    @State var medications = Array(repeating: "Medicine 1", count: 6)
+    @EnvironmentObject var coordinator: NavigationCoordinator
+    @State private var medications = Array(repeating: "Medicine 1", count: 6)
     
     var body: some View {
         
@@ -19,7 +20,7 @@ struct MedicationsList: View {
                 .font(.title)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .fontWeight(.bold)
-                .foregroundColor(Color.blue)
+                .foregroundColor(AppColors.textBlack)
                 .padding(.leading, 24)
                 .background(AppColors.mainBackground)
             
@@ -32,31 +33,28 @@ struct MedicationsList: View {
                 }
                 
             }
-            .listStyle(.plain)
-            .frame(width: .infinity, alignment: .leading)
-            .padding(8)
+            .frame(maxWidth: .infinity, alignment: .leading)
             .background(AppColors.mainBackground)
             
             Spacer()
             
             Button(action: {
-                
+                coordinator.present(.search)
             }) {
-                Text(Constants.searchMedication)
-                    .font(.headline)
-                    .padding()
-                    .frame(maxWidth: .infinity)
-                    .foregroundColor(AppColors.primaryBlue)
-                    .cornerRadius(10)
+                HStack(spacing: 8) {
+                    Image(systemName: "plus.circle")
+                    Text(Constants.searchMedication)
+                        .font(.headline)
+                        .foregroundColor(AppColors.primaryBlue)
+                }
             }
-            .padding(.horizontal)
-            
+            .frame(maxWidth: .infinity, alignment: .center)
         }
         .background(AppColors.mainBackground)
-       
+        
     }
 }
 
 #Preview {
-    MedicationsList()
+    MedicationsListView()
 }

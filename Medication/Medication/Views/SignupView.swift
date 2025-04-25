@@ -9,6 +9,8 @@ import SwiftUI
 
 struct SignupView: View {
     
+    @AppStorage("isLoggedIn") var isLoggedIn = false
+    
     @State  private var userName = ""
     @State  private var email = ""
     @State  private var password = ""
@@ -39,7 +41,7 @@ struct SignupView: View {
         Spacer()
         
         Button(action: {
-            print()
+            isLoggedIn = true
         }) {
             Text("Create Account")
                 .font(.headline)

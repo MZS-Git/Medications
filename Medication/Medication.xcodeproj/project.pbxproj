@@ -29,9 +29,33 @@
 		673E01B82DB88B71003CC3BF /* MedicationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MedicationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		673E023C2DBBB08F003CC3BF /* Exceptions for "Medication" folder in "Medication" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				App/.swift,
+			);
+			target = 673E019D2DB88B6F003CC3BF /* Medication */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+		673E023D2DBBB08F003CC3BF /* Exceptions for "Medication" folder in "Compile Sources" phase from "Medication" target */ = {
+			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
+			buildPhase = 673E019A2DB88B6F003CC3BF /* Sources */;
+			membershipExceptions = (
+				App/.swift,
+			);
+		};
+/* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		673E01A02DB88B6F003CC3BF /* Medication */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				673E023C2DBBB08F003CC3BF /* Exceptions for "Medication" folder in "Medication" target */,
+				673E023D2DBBB08F003CC3BF /* Exceptions for "Medication" folder in "Compile Sources" phase from "Medication" target */,
+			);
 			path = Medication;
 			sourceTree = "<group>";
 		};

@@ -9,10 +9,10 @@ import SwiftUI
 
 struct SplashView: View {
     
-    @State private var path = NavigationPath()
+    @StateObject private var coordinator = NavigationCoordinator()
     
     var body: some View {
-        NavigationStack(path: $path) {
+        NavigationStack(path: $coordinator.path) {
             ZStack {
                 Color(AppColors.splashBackground)
                     .ignoresSafeArea()
@@ -29,7 +29,7 @@ struct SplashView: View {
                     Spacer()
                     
                     Button(action: {
-                        path.append(NavigationRoute.signUp)
+                        coordinator.push(.signUp)
                     }) {
                         Text(Constants.createAccountTitle)
                             .font(.headline)
@@ -42,7 +42,7 @@ struct SplashView: View {
                     .padding(.horizontal)
                     
                     Button(action: {
-                        path.append(NavigationRoute.signIn)
+                        coordinator.push(.signIn)
                     }) {
                         Text(Constants.alreadyHaveAccount)
                             .font(.subheadline)
@@ -58,6 +58,12 @@ struct SplashView: View {
                         SignInView()
                     case .signUp:
                         SignupView()
+                    case .home:
+                        EmptyView()
+                    case .search:
+                        EmptyView()
+                    case .detail:
+                        EmptyView()
                 }
             }
             .navigationBarBackButtonHidden(false)

@@ -9,6 +9,8 @@ import SwiftUI
 
 struct SignInView: View {
     
+    @AppStorage("isLoggedIn") var isLoggedIn = false
+    
     @State  private var email = ""
     @State  private var password = ""
     
@@ -35,7 +37,7 @@ struct SignInView: View {
         Spacer()
         
         Button(action: {
-            print("Styled button tapped!")
+            isLoggedIn = true
         }) {
             Text(Constants.login)
                 .font(.headline)

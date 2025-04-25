@@ -9,9 +9,16 @@ import SwiftUI
 
 @main
 struct MedicationApp: App {
+    
+    @AppStorage("isLoggedIn") var isLoggedIn = false
+    
     var body: some Scene {
         WindowGroup {
-            SplashView()
+            if isLoggedIn {
+                MainNavigationView()
+            } else {
+                SplashView()
+            }
         }
     }
 }
