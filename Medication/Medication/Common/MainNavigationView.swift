@@ -24,8 +24,8 @@ struct MainNavigationView: View {
                             EmptyView()
                         case .signUp:
                             EmptyView()
-                        case .detail:
-                            EmptyView()
+                        case .detail(let medication):
+                            MedicationDetailView(medicationItem: medication).environmentObject(coordinator)
                     }
                 }
                 .sheet(item: $coordinator.presentedSheet) { sheetRoute in
@@ -40,8 +40,8 @@ struct MainNavigationView: View {
                             EmptyView()
                         case .signUp:
                             EmptyView()
-                        case .detail:
-                            EmptyView()
+                        case .detail(let medication):
+                            MedicationDetailView(medicationItem: medication).environmentObject(coordinator)
                     }
                 }
         }

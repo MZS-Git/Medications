@@ -26,6 +26,9 @@ struct Constants {
     static let email = "Email"
     static let myMedications = "My Medications"
     static let searchMedication = "Search Medications"
+    static let addToMedication = "Add to Medication"
+    static let detail = "Detail"
+    
     
     // MARK: PlaceHolders
     
@@ -35,8 +38,19 @@ struct Constants {
         static let password = "**************"
     }
     
+    // MARK: Images
+    
     struct Image {
         static let splashIcon = "catalog"
+        static let pill = "pills.fill"
+        static let plusCircle = "plus.circle"
+        static let circleFill = "circle.fill"
+    }
+    
+    // MARK: Network URLS
+    
+    struct URL {
+        static let baseURL = "https://rxnav.nlm.nih.gov/"
     }
     
 }

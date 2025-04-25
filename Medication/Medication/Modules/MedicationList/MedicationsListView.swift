@@ -26,7 +26,7 @@ struct MedicationsListView: View {
             
             List {
                 ForEach(medications, id: \.self) { med in
-                    MedicineCellView(title: med)
+                    MedicineRow(title: med)
                 }
                 .onDelete { indexSet in
                     medications.remove(atOffsets: indexSet)
@@ -39,10 +39,10 @@ struct MedicationsListView: View {
             Spacer()
             
             Button(action: {
-                coordinator.present(.search)
+                coordinator.push(.search)
             }) {
                 HStack(spacing: 8) {
-                    Image(systemName: "plus.circle")
+                    Image(systemName: Constants.Image.plusCircle)
                     Text(Constants.searchMedication)
                         .font(.headline)
                         .foregroundColor(AppColors.primaryBlue)

@@ -5,7 +5,7 @@
 //  Created by Muhammad Zain Shahid on 23/04/2025.
 //
 
-import SwiftUICore
+import SwiftUI
 
 enum AppColors {
     
@@ -13,8 +13,6 @@ enum AppColors {
     
     static let splashBackground = Color("splash")
     static let mainBackground = Color("mainBackground")
-    
-    
     
     // MARK: System Colors
     

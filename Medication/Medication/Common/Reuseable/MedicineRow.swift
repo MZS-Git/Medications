@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MedicineCellView: View {
+struct MedicineRow: View {
     
     var title: String = ""
     
@@ -15,13 +15,13 @@ struct MedicineCellView: View {
         HStack(alignment: .center) {
             Image(systemName: "pills.fill")
                 .frame(width: 32, height: 32)
-                .font(.title2)
                 .foregroundColor(.gray)
                 .background(Color.orange)
                 .clipShape(.circle)
             
             Text(title)
                 .font(.title3)
+                .lineLimit(1)
             
             Spacer()
         }
@@ -30,5 +30,5 @@ struct MedicineCellView: View {
 }
 
 #Preview {
-    MedicineCellView(title: "Hello")
+    MedicineRow(title: "Hello")
 }
