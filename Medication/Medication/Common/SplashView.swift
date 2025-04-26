@@ -14,9 +14,8 @@ struct SplashView: View {
     var body: some View {
         NavigationStack(path: $coordinator.path) {
             ZStack {
-                Color(AppColors.splashBackground)
-                    .ignoresSafeArea()
-                
+                Color(UIColor(named: AppColors.splash) ?? .clear)
+                    .edgesIgnoringSafeArea(.all)
                 VStack() {
                     
                     Spacer()

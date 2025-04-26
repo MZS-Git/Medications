@@ -10,12 +10,11 @@ import SwiftUI
 struct MedicationsListView: View {
     
     @EnvironmentObject var coordinator: NavigationCoordinator
-    @State private var medications = Array(repeating: "Medicine 1", count: 6)
+    @StateObject var viewModel = MedicationListViewModel(realmRepo: RealmDBRepository<MedicationRealm>())
     
     var body: some View {
         
         VStack(alignment: .leading, spacing: 0) {
-            
             Text(Constants.myMedications)
                 .font(.title)
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -23,18 +22,30 @@ struct MedicationsListView: View {
                 .foregroundColor(AppColors.textBlack)
                 .padding(.leading, 24)
                 .background(AppColors.mainBackground)
-            
-            List {
-                ForEach(medications, id: \.self) { med in
-                    MedicineRow(title: med)
-                }
-                .onDelete { indexSet in
-                    medications.remove(atOffsets: indexSet)
-                }
+            if viewModel.medications.isEmpty {
+                Text(viewModel.message)
+                    .padding()
+                    .multilineTextAlignment(.center)
+                    .frame(maxWidth: .infinity, minHeight: 60, alignment: .center)
+                    .background(AppColors.white)
+                    .foregroundColor(AppColors.textGray)
+                    .cornerRadius(12)
+                    .padding()
                 
+            } else {
+                List {
+                    ForEach(viewModel.medications, id: \.self) { med in
+                        MedicineRow(title: med.name)
+                    }
+                    .onDelete { indexSet in
+                        if let index = indexSet.first {
+                            viewModel.deleteMedication(index: index)
+                        }
+                    }
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .background(AppColors.mainBackground)
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .background(AppColors.mainBackground)
             
             Spacer()
             
@@ -51,7 +62,9 @@ struct MedicationsListView: View {
             .frame(maxWidth: .infinity, alignment: .center)
         }
         .background(AppColors.mainBackground)
-        
+        .onAppear {
+            viewModel.fetchMedications()
+        }
     }
 }
 

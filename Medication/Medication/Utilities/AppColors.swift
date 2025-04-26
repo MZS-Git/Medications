@@ -13,6 +13,7 @@ enum AppColors {
     
     static let splashBackground = Color("splash")
     static let mainBackground = Color("mainBackground")
+    static let splash = "splash"
     
     // MARK: System Colors
     
@@ -20,5 +21,4 @@ enum AppColors {
     static let textBlack = Color.primary
     static let textGray = Color.gray
     static let white = Color.white
-    
 }

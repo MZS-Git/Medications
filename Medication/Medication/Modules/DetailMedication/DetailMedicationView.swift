@@ -13,7 +13,14 @@ import SwiftUI
 struct MedicationDetailView: View {
     
     @EnvironmentObject var coordinator: NavigationCoordinator
-    let medicationItem: ConceptProperty
+    @StateObject var viewModel: DetailMedicationViewModel
+    
+    init(medicationItem: ConceptProperty) {
+        _viewModel = StateObject(wrappedValue: DetailMedicationViewModel(
+            realmRepo: RealmDBRepository<MedicationRealm>(),
+            medicine: medicationItem
+        ))
+    }
     
     var body: some View {
         
@@ -27,13 +34,15 @@ struct MedicationDetailView: View {
                 .clipShape(.circle)
                 .padding(12)
             
-            Text(medicationItem.name)
+            Text(viewModel.medicine.name)
                 .font(.title2)
                 .fontWeight(.bold)
                 .foregroundStyle(AppColors.textBlack)
                 .multilineTextAlignment(.center)
+                .lineLimit(2)
+                .padding(.horizontal)
             
-            Text(medicationItem.synonym)
+            Text(viewModel.medicine.synonym)
                 .font(.title3)
                 .fontWeight(.regular)
                 .foregroundStyle(AppColors.textGray)
@@ -45,7 +54,7 @@ struct MedicationDetailView: View {
                         .fontWeight(.regular)
                         .foregroundStyle(AppColors.textGray)
                         .padding(.init(top: 12, leading: 12, bottom: 0, trailing: 0))
-                    ForEach(medicationItem.mockDetail ?? []) { section in
+                    ForEach(viewModel.medicine.mockDetail ?? []) { section in
                         BulletView(
                             title: section.title,
                             items: section.items
@@ -61,6 +70,7 @@ struct MedicationDetailView: View {
             Spacer()
             
             Button(action: {
+                viewModel.addToMedicationList()
                 coordinator.dismissSheet()
                 coordinator.popToRoot()
             }) {
@@ -75,6 +85,5 @@ struct MedicationDetailView: View {
             .padding(.horizontal)
         }
         .background(AppColors.mainBackground)
-        
     }
 }

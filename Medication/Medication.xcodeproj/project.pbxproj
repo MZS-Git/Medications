@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		6769C8962DBCC366002E33D4 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 6769C8952DBCC366002E33D4 /* RealmSwift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		673E01AF2DB88B71003CC3BF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -23,39 +27,28 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		6769C8922DBCC25B002E33D4 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		673E019E2DB88B6F003CC3BF /* Medication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Medication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		673E01AE2DB88B71003CC3BF /* MedicationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MedicationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		673E01B82DB88B71003CC3BF /* MedicationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MedicationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		673E023C2DBBB08F003CC3BF /* Exceptions for "Medication" folder in "Medication" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				App/.swift,
-			);
-			target = 673E019D2DB88B6F003CC3BF /* Medication */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
-/* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
-		673E023D2DBBB08F003CC3BF /* Exceptions for "Medication" folder in "Compile Sources" phase from "Medication" target */ = {
-			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
-			buildPhase = 673E019A2DB88B6F003CC3BF /* Sources */;
-			membershipExceptions = (
-				App/.swift,
-			);
-		};
-/* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		673E01A02DB88B6F003CC3BF /* Medication */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				673E023C2DBBB08F003CC3BF /* Exceptions for "Medication" folder in "Medication" target */,
-				673E023D2DBBB08F003CC3BF /* Exceptions for "Medication" folder in "Compile Sources" phase from "Medication" target */,
-			);
 			path = Medication;
 			sourceTree = "<group>";
 		};
@@ -76,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6769C8962DBCC366002E33D4 /* RealmSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,6 +120,7 @@
 				673E019A2DB88B6F003CC3BF /* Sources */,
 				673E019B2DB88B6F003CC3BF /* Frameworks */,
 				673E019C2DB88B6F003CC3BF /* Resources */,
+				6769C8922DBCC25B002E33D4 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -136,6 +131,7 @@
 			);
 			name = Medication;
 			packageProductDependencies = (
+				6769C8952DBCC366002E33D4 /* RealmSwift */,
 			);
 			productName = Medication;
 			productReference = 673E019E2DB88B6F003CC3BF /* Medication.app */;
@@ -219,6 +215,9 @@
 			);
 			mainGroup = 673E01952DB88B6F003CC3BF;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				6769C8942DBCC339002E33D4 /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 673E019F2DB88B6F003CC3BF /* Products */;
 			projectDirPath = "";
@@ -427,6 +426,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -455,6 +455,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -576,6 +577,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		6769C8942DBCC339002E33D4 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6769C8952DBCC366002E33D4 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6769C8942DBCC339002E33D4 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 673E01962DB88B6F003CC3BF /* Project object */;
 }

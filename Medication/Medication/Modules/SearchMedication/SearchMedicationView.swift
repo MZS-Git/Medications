@@ -37,7 +37,7 @@ struct SearchMedicationView: View {
         .onSubmit(of: .search) {
             viewModel.searchMedicine(name: searchText)
         }
-        .onChange(of: searchText, { oldValue, newValue in
+        .onChange(of: searchText, perform: { newValue in
             if newValue.isEmpty {
                 viewModel.resetSearchResults()
             }
