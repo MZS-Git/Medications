@@ -37,7 +37,7 @@ struct TextFieldView: View {
                         .foregroundColor(AppColors.textGray)
                 } else {
                     TextField(placeHolder, text: $text)
-                        .foregroundColor(AppColors.textGray)
+                        .foregroundColor(AppColors.textGray)    
                 }
                 
             }

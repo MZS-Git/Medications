@@ -27,7 +27,7 @@ struct MedicationsListView: View {
                 .background(AppColors.mainBackground)
                 .accessibilityLabel("My Medications Heading")
            
-            if let medications = viewModel.medications, medications.isEmpty {
+            if viewModel.medications?.count == 0 {
                 Text(viewModel.message)
                     .padding()
                     .multilineTextAlignment(.center)
@@ -40,7 +40,7 @@ struct MedicationsListView: View {
             } else {
                 if let medications = viewModel.medications {
                     List {
-                        ForEach(medications, id: \.self) { med in
+                        ForEach(medications) { med in
                             MedicineRow(title: med.name)
                         }
                         .onDelete { indexSet in
