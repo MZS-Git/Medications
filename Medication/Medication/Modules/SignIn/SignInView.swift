@@ -7,6 +7,14 @@
 
 import SwiftUI
 
+/// A view that represents the sign-in screen where users can log in to the application.
+/// It includes input fields for the user's email and password, and a button to submit the login form.
+/// Displays a toast notification if there is an authentication error.
+///
+/// - Uses:
+///   - `AuthViewModel` for handling the authentication logic.
+///   - `TextFieldView` for email and password input fields.
+///   - `ToastView` for displaying error messages.
 struct SignInView: View {
     
     @AppStorage("isLoggedIn") var isLoggedIn = false
@@ -15,6 +23,8 @@ struct SignInView: View {
     @State  private var email = ""
     @State  private var password = ""
     
+    /// The body of the view that contains the sign-in form with email and password fields,
+    /// along with a sign-in button. It displays a title and handles login state changes and error messages.
     var body: some View {
         
         Text(Constants.loginTitle)

@@ -7,6 +7,12 @@
 
 import SwiftUI
 
+/// A view that displays a bullet-pointed list with a title and multiple items.
+/// Each item in the list is represented by a bullet point icon followed by the item text.
+///
+/// - Parameters:
+///   - title: The title that appears at the top of the bullet list.
+///   - items: An array of strings to be displayed as bullet points beneath the title.
 struct BulletView: View {
     let title: String
     let items: [String]

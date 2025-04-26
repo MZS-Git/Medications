@@ -7,6 +7,11 @@
 
 import SwiftUI
 
+/// A view that represents a row displaying a medicine-related item with an icon and title.
+/// The row consists of an icon on the left, the title on the right, and a spacer between them.
+///
+/// - Parameters:
+///   - title: The title of the medicine row, displayed next to the icon. Defaults to an empty string.
 struct MedicineRow: View {
     
     var title: String = ""

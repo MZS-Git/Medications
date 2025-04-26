@@ -7,13 +7,16 @@
 
 import SwiftUI
 
+/// A view displaying the list of medications.
+///
+/// The  `MedicationsListView` view provides an overview of medications, including its name and options to delete by swipe
+/// Its also includes a  Search button to search medicines
 struct MedicationsListView: View {
     
     @EnvironmentObject var coordinator: NavigationCoordinator
     @StateObject var viewModel = MedicationListViewModel(realmRepo: RealmDBRepository<MedicationRealm>())
     
     var body: some View {
-        
         VStack(alignment: .leading, spacing: 0) {
             Text(Constants.myMedications)
                 .font(.title)
@@ -22,7 +25,9 @@ struct MedicationsListView: View {
                 .foregroundColor(AppColors.textBlack)
                 .padding(.leading, 24)
                 .background(AppColors.mainBackground)
-            if viewModel.medications.isEmpty {
+                .accessibilityLabel("My Medications Heading")
+           
+            if let medications = viewModel.medications, medications.isEmpty {
                 Text(viewModel.message)
                     .padding()
                     .multilineTextAlignment(.center)
@@ -33,18 +38,20 @@ struct MedicationsListView: View {
                     .padding()
                 
             } else {
-                List {
-                    ForEach(viewModel.medications, id: \.self) { med in
-                        MedicineRow(title: med.name)
-                    }
-                    .onDelete { indexSet in
-                        if let index = indexSet.first {
-                            viewModel.deleteMedication(index: index)
+                if let medications = viewModel.medications {
+                    List {
+                        ForEach(medications, id: \.self) { med in
+                            MedicineRow(title: med.name)
+                        }
+                        .onDelete { indexSet in
+                            if let index = indexSet.first {
+                                viewModel.deleteMedication(index: index)
+                            }
                         }
                     }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .background(AppColors.mainBackground)
                 }
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .background(AppColors.mainBackground)
             }
             
             Spacer()

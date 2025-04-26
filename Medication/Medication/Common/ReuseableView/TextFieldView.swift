@@ -7,6 +7,15 @@
 
 import SwiftUI
 
+/// A custom view representing an input field with a label and a secure or regular text input.
+/// It allows you to display a labeled text field with optional secure input and customizable keyboard type.
+///
+/// - Parameters:
+///   - title: The label for the text field, describing what the input is for.
+///   - placeHolder: The placeholder text that appears when the field is empty.
+///   - isSecure: A flag indicating whether the text field should use a secure input (default is `false`).
+///   - keyboardType: The type of keyboard to display (default is `.default`).
+///   - text: A binding to a string value that holds the input text.
 struct TextFieldView: View {
     
     let title: String

@@ -8,22 +8,28 @@
 
 import Foundation
 
+/// Represents the response from a drug API call.
 struct DrugResponse: Decodable {
     let drugGroup: DrugGroup
 }
 
+/// Contains metadata and a list of concept groups for medications.
 struct DrugGroup: Decodable {
     let name: String?
     let conceptGroup: [ConceptGroup]
 }
 
+/// Represents a categorized group of medication concepts.
 struct ConceptGroup: Decodable {
     let tty: String
     let conceptProperties: [ConceptProperty]?
 }
 
+/// Represents detailed properties of a medication concept.
 struct ConceptProperty: Decodable, Identifiable, Hashable {
-    var id: String { name }  // To conform to Identifiable for SwiftUI lists
+    /// A unique identifier used for SwiftUI lists, derived from the medication name.
+    var id: String { name }
+    
     let rxcui: String
     let name: String
     let synonym: String
@@ -31,10 +37,17 @@ struct ConceptProperty: Decodable, Identifiable, Hashable {
     let language: String
     let suppress: String
     let umlscui: String
+    
+    /// Mock medication detail data for UI testing or sample display.
+    ///
+    /// Returns a hardcoded list of `MockDetail` objects that simulate detailed medication instructions.
     var mockDetail: [MockDetail]? {
         return fetchMedicationSections()
     }
     
+    /// Generates mock medication sections with sample dosage and usage instructions.
+    ///
+    /// - Returns: An array of `MockDetail` representing different dosage forms.
     private func fetchMedicationSections() -> [MockDetail] {
         return [
             MockDetail(

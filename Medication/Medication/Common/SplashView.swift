@@ -7,10 +7,17 @@
 
 import SwiftUI
 
+/// The splash screen view displayed when the app launches.
+/// It shows a branded logo and provides buttons for the user to either sign in or create a new account.
+///
+/// - Uses:
+///   - `NavigationCoordinator` to manage navigation and routing to the sign-in and sign-up screens.
 struct SplashView: View {
     
     @StateObject private var coordinator = NavigationCoordinator()
     
+    /// The body of the view that displays a full-screen splash screen with a logo
+    /// and buttons to navigate to either the sign-in or sign-up screens.
     var body: some View {
         NavigationStack(path: $coordinator.path) {
             ZStack {
@@ -52,6 +59,7 @@ struct SplashView: View {
                 .padding(.bottom, 20)
             }
             .navigationDestination(for: NavigationRoute.self) { route in
+                // Navigate to the appropriate screen based on the route
                 switch route {
                     case .signIn:
                         SignInView()

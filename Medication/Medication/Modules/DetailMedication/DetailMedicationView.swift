@@ -9,7 +9,12 @@ import SwiftUI
 
 import SwiftUI
 
-
+/// A view that displays detailed information about a specific medication.
+/// It includes the medication's name, synonym, and additional details in a scrollable format.
+/// There is also an option to add the medication to the user's list.
+///
+/// - Parameters:
+///   - medicationItem: A `ConceptProperty` object representing the medication details to be displayed.
 struct MedicationDetailView: View {
     
     @EnvironmentObject var coordinator: NavigationCoordinator
