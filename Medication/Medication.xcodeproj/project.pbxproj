@@ -10,7 +10,11 @@
 		6799DAD82DBCE9B200B98528 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 6799DAD72DBCE9B200B98528 /* FirebaseAuth */; };
 		6799DADA2DBCE9B200B98528 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 6799DAD92DBCE9B200B98528 /* FirebaseCore */; };
 		6799DADC2DBCE9B200B98528 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 6799DADB2DBCE9B200B98528 /* FirebaseFirestore */; };
-		6799DADF2DBCEA3B00B98528 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 6799DADE2DBCEA3B00B98528 /* RealmSwift */; };
+		6799DAF62DBD5FCE00B98528 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 6799DAF52DBD5FCE00B98528 /* Realm */; };
+		6799DAF72DBD5FCE00B98528 /* Realm in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 6799DAF52DBD5FCE00B98528 /* Realm */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		6799DAF92DBD5FCE00B98528 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 6799DAF82DBD5FCE00B98528 /* RealmSwift */; };
+		6799DAFA2DBD5FCE00B98528 /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 6799DAF82DBD5FCE00B98528 /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		6799DAFC2DBD613700B98528 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 6799DAFB2DBD613700B98528 /* RealmSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +41,18 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6799DAF12DBD5EF600B98528 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				6799DAFA2DBD5FCE00B98528 /* RealmSwift in Embed Frameworks */,
+				6799DAF72DBD5FCE00B98528 /* Realm in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -72,7 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6799DADF2DBCEA3B00B98528 /* RealmSwift in Frameworks */,
+				6799DAFC2DBD613700B98528 /* RealmSwift in Frameworks */,
 				6799DADA2DBCE9B200B98528 /* FirebaseCore in Frameworks */,
 				6799DAD82DBCE9B200B98528 /* FirebaseAuth in Frameworks */,
 				6799DADC2DBCE9B200B98528 /* FirebaseFirestore in Frameworks */,
@@ -83,6 +99,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6799DAF92DBD5FCE00B98528 /* RealmSwift in Frameworks */,
+				6799DAF62DBD5FCE00B98528 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +120,7 @@
 				673E01A02DB88B6F003CC3BF /* Medication */,
 				673E01B12DB88B71003CC3BF /* MedicationTests */,
 				673E01BB2DB88B71003CC3BF /* MedicationUITests */,
+				6799DAED2DBD5EF600B98528 /* Frameworks */,
 				673E019F2DB88B6F003CC3BF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -114,6 +133,13 @@
 				673E01B82DB88B71003CC3BF /* MedicationUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		6799DAED2DBD5EF600B98528 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,7 +166,7 @@
 				6799DAD72DBCE9B200B98528 /* FirebaseAuth */,
 				6799DAD92DBCE9B200B98528 /* FirebaseCore */,
 				6799DADB2DBCE9B200B98528 /* FirebaseFirestore */,
-				6799DADE2DBCEA3B00B98528 /* RealmSwift */,
+				6799DAFB2DBD613700B98528 /* RealmSwift */,
 			);
 			productName = Medication;
 			productReference = 673E019E2DB88B6F003CC3BF /* Medication.app */;
@@ -153,6 +179,7 @@
 				673E01AA2DB88B71003CC3BF /* Sources */,
 				673E01AB2DB88B71003CC3BF /* Frameworks */,
 				673E01AC2DB88B71003CC3BF /* Resources */,
+				6799DAF12DBD5EF600B98528 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -164,6 +191,8 @@
 			);
 			name = MedicationTests;
 			packageProductDependencies = (
+				6799DAF52DBD5FCE00B98528 /* Realm */,
+				6799DAF82DBD5FCE00B98528 /* RealmSwift */,
 			);
 			productName = MedicationTests;
 			productReference = 673E01AE2DB88B71003CC3BF /* MedicationTests.xctest */;
@@ -623,7 +652,17 @@
 			package = 6799DAD62DBCE9B100B98528 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestore;
 		};
-		6799DADE2DBCEA3B00B98528 /* RealmSwift */ = {
+		6799DAF52DBD5FCE00B98528 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6799DADD2DBCEA3B00B98528 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		6799DAF82DBD5FCE00B98528 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6799DADD2DBCEA3B00B98528 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+		6799DAFB2DBD613700B98528 /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 6799DADD2DBCEA3B00B98528 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
