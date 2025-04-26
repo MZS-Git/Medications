@@ -4,10 +4,6 @@
 This project demonstrates an iOS application that performs data fetching, displaying, and basic CRUD operations using the Realm database. It focuses on:
 - MVVM architecture with Dependency Injection
 - Repositories
-
-https://github.com/user-attachments/assets/36b27d89-e2e6-4369-a1c2-0e5eca5fdeef
-
-
 - Responsiveness with Combine
 - Realm local storage
 - Firebase Authentication
@@ -58,3 +54,6 @@ _(If given more time)_
 
 ### Architecture
 - Protocol-oriented DI for better testability
+
+https://github.com/user-attachments/assets/36b27d89-e2e6-4369-a1c2-0e5eca5fdeef
+
