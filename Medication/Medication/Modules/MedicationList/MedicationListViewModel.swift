@@ -28,7 +28,7 @@ class MedicationListViewModel: ObservableObject {
         do {
             let medicine = medications[index]
             try realmRepo.delete(medicine)
-            medications.remove(at: index) 
+            medications.remove(at: index)
         } catch {
             self.message = "Failed to delete medicine: \(error.localizedDescription)"
         }

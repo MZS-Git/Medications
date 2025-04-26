@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6769C8962DBCC366002E33D4 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 6769C8952DBCC366002E33D4 /* RealmSwift */; };
+		6799DAD82DBCE9B200B98528 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 6799DAD72DBCE9B200B98528 /* FirebaseAuth */; };
+		6799DADA2DBCE9B200B98528 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 6799DAD92DBCE9B200B98528 /* FirebaseCore */; };
+		6799DADC2DBCE9B200B98528 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 6799DADB2DBCE9B200B98528 /* FirebaseFirestore */; };
+		6799DADF2DBCEA3B00B98528 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 6799DADE2DBCEA3B00B98528 /* RealmSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,7 +72,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6769C8962DBCC366002E33D4 /* RealmSwift in Frameworks */,
+				6799DADF2DBCEA3B00B98528 /* RealmSwift in Frameworks */,
+				6799DADA2DBCE9B200B98528 /* FirebaseCore in Frameworks */,
+				6799DAD82DBCE9B200B98528 /* FirebaseAuth in Frameworks */,
+				6799DADC2DBCE9B200B98528 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,7 +137,10 @@
 			);
 			name = Medication;
 			packageProductDependencies = (
-				6769C8952DBCC366002E33D4 /* RealmSwift */,
+				6799DAD72DBCE9B200B98528 /* FirebaseAuth */,
+				6799DAD92DBCE9B200B98528 /* FirebaseCore */,
+				6799DADB2DBCE9B200B98528 /* FirebaseFirestore */,
+				6799DADE2DBCEA3B00B98528 /* RealmSwift */,
 			);
 			productName = Medication;
 			productReference = 673E019E2DB88B6F003CC3BF /* Medication.app */;
@@ -216,7 +225,8 @@
 			mainGroup = 673E01952DB88B6F003CC3BF;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				6769C8942DBCC339002E33D4 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				6799DAD62DBCE9B100B98528 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				6799DADD2DBCEA3B00B98528 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 673E019F2DB88B6F003CC3BF /* Products */;
@@ -579,9 +589,17 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		6769C8942DBCC339002E33D4 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+		6799DAD62DBCE9B100B98528 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/realm/realm-swift.git";
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.12.0;
+			};
+		};
+		6799DADD2DBCEA3B00B98528 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift";
 			requirement = {
 				branch = master;
 				kind = branch;
@@ -590,9 +608,24 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		6769C8952DBCC366002E33D4 /* RealmSwift */ = {
+		6799DAD72DBCE9B200B98528 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 6769C8942DBCC339002E33D4 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			package = 6799DAD62DBCE9B100B98528 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		6799DAD92DBCE9B200B98528 /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6799DAD62DBCE9B100B98528 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+		6799DADB2DBCE9B200B98528 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6799DAD62DBCE9B100B98528 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		6799DADE2DBCEA3B00B98528 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6799DADD2DBCEA3B00B98528 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */

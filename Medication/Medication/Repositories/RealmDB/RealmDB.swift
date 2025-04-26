@@ -32,6 +32,7 @@ final class RealmDBRepository<T: Object>: IRealmDBRepository {
     func getAll() -> Results<Entity> {
         return realm.objects(T.self)
     }
+    
     func create(_ entity: Entity) throws {
         try realm.write {
             realm.add(entity, update: .modified)

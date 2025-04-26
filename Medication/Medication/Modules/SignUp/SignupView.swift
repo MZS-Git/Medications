@@ -10,6 +10,7 @@ import SwiftUI
 struct SignupView: View {
     
     @AppStorage("isLoggedIn") var isLoggedIn = false
+    @StateObject var viewModel = AuthViewModel()
     
     @State  private var userName = ""
     @State  private var email = ""
@@ -37,11 +38,19 @@ struct SignupView: View {
                            isSecure: true,
                            text: $password)
         }
+        .onChange(of: viewModel.isAuthenticated) { newValue in
+            isLoggedIn = newValue
+        }
         
         Spacer()
         
+        if let message = viewModel.authError {
+            ToastView(message: message)
+        }
+        
+        
         Button(action: {
-            isLoggedIn = true
+            viewModel.signUp(email: email, password: password, name: userName)
         }) {
             Text("Create Account")
                 .font(.headline)
