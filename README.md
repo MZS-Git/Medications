@@ -43,6 +43,7 @@ _(If given more time)_
 - Implement custom error types for detailed error handling
 - Add search functionality and pagination
 - Include edit/update functionality
+- Regex Validations
 
 ### UI/UX
 - Animations for smoother transitions
